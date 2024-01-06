@@ -116,7 +116,6 @@ export default {
      * @param {Event} event
      */
     showPopUp(event) {
-      console.log(event);
       this.popUpTopValue = event.offsetX;
       this.popUpBottomValue = event.target.clientHeight - event.offsetY;
       this.isVisiblePopUp = true;
