@@ -1,6 +1,6 @@
 # booking-calendar
 
-Booking calendar show table with dates of week (current week by default) as columns
+Booking calendar show's table with dates of week (current week by default) as columns
 and room's name as rows. Table show's how many days are reserved by guest. If you click on guest rectangle,
 you will see detailed information about the guest
 
