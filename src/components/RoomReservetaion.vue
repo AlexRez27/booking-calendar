@@ -1,7 +1,7 @@
 <template>
   <div
     class="reservation"
-    @click="showPopUp"
+    @click.self="showPopUp"
     :class="[isRightEdge ? 'right-edge' : '', isLeftEdge ? 'left-edge' : '']"
     :style="[{ left: `${left}px` }, { right: `${right}px` }]"
   >
@@ -116,6 +116,7 @@ export default {
      * @param {Event} event
      */
     showPopUp(event) {
+      console.log(event);
       this.popUpTopValue = event.offsetX;
       this.popUpBottomValue = event.target.clientHeight - event.offsetY;
       this.isVisiblePopUp = true;
