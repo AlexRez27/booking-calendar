@@ -26,15 +26,21 @@ export default {
     ]),
     addWeekHandler() {
       this.addWeek();
-      this.getWeeklyReservations(this.getDateRange);
+      this.$nextTick(() => {
+        this.getWeeklyReservations(this.getDateRange);
+      });
     },
     minusWeekHandler() {
       this.minusWeek();
-      this.getWeeklyReservations(this.getDateRange);
+      this.$nextTick(() => {
+        this.getWeeklyReservations(this.getDateRange);
+      });
     },
     gotoCurrentWeekHandler() {
       this.gotoCurrentWeek();
-      this.getWeeklyReservations(this.getDateRange);
+      this.$nextTick(() => {
+        this.getWeeklyReservations(this.getDateRange);
+      });
     },
   },
 };
