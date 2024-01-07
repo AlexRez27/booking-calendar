@@ -4,23 +4,27 @@
     :style="[{ left: `${left}px` }, { bottom: `${bottom}px` }]"
   >
     <div class="popup__header">
-      <h2 class="popup_name">
+      <h2 class="popup__name">
         {{ guestInfo.name }}
       </h2>
+      <p class="popup__range">
+        {{ guestInfo.start }} - {{ guestInfo.end }} ({{ guestInfo.duration }}
+        {{ guestInfo.duration === 1 ? "day" : "days" }})
+      </p>
       <a :href="`tel:+${guestInfo.phone}`" class="popup__contact">{{
         guestInfo.phone
       }}</a
       ><a :href="`mailto: ${guestInfo.email}`" class="popup__contact">{{
         guestInfo.email
       }}</a>
-      <div class="popup__body">
-        <p class="popup__roomtype">{{ guestInfo.typeOfApartments }}</p>
-        <h3 class="popup__number">Number of Guests</h3>
-        <p class="popup__adults">Adults: {{ guestInfo.guestInfo.adults }}</p>
-        <p class="popup__children">
-          Children: {{ guestInfo.guestInfo.children }}
-        </p>
-      </div>
+    </div>
+    <div class="popup__body">
+      <p class="popup__roomtype">{{ guestInfo.typeOfApartments }}</p>
+      <h3 class="popup__number">Number of Guests</h3>
+      <p class="popup__adults">Adults: {{ guestInfo.guestInfo.adults }}</p>
+      <p class="popup__children">
+        Children: {{ guestInfo.guestInfo.children }}
+      </p>
     </div>
     <div class="popup__button">
       <ButtonComponent @on-click="hidePopUp"> Close </ButtonComponent>
@@ -73,7 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 .popup {
-  width: 200px;
+  width: 220px;
   border-radius: 10px;
   padding: 10px;
   background-color: #fff;
@@ -84,15 +88,25 @@ export default {
   justify-content: flex-start;
   position: absolute;
   font-weight: normal;
-  cursor: default;
   -webkit-box-shadow: 0px 0px 13px 1px rgba(148, 133, 148, 1);
   -moz-box-shadow: 0px 0px 13px 1px rgba(148, 133, 148, 1);
   box-shadow: 0px 0px 13px 1px rgba(148, 133, 148, 1);
+  font-family: $--main-font-family;
+  cursor: default;
 
   &__header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  &__range {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  &__name {
+    margin-bottom: 0;
+    margin-top: 0;
   }
   &__body {
     display: flex;

@@ -17,8 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: $--main-font-family;
   &__title {
     font-size: 36px;
   }

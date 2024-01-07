@@ -30,7 +30,7 @@ export default {
   // font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
   //   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   // font-family: $--main-font-family;
-  font-size: 14px;
+  font-size: $--main-font-size;
   font-weight: 600;
   line-height: normal;
   margin: 0;

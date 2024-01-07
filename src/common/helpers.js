@@ -5,11 +5,22 @@
  * @returns {Date}
  */
 
-export const getDay = (date, dayNymber) => {
-  let day = date.getDay();
-  const diff = date.getDate() - day + (day == 0 ? -6 : dayNymber);
-  return new Date(date.setDate(diff));
-};
+function getDay(date, dayNumber) {
+  // Validate dayNumber (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
+  if (dayNumber < 1 || dayNumber > 7) {
+    throw new Error("Invalid dayNumber. It should be between 1 and 7.");
+  }
+
+  // Calculate the difference between the desired day and the current day
+  const currentDay = ((date.getDay() + 6) % 7) + 1;
+  console.log(((date.getDay() + 6) % 7) + 1);
+  const dayDifference = dayNumber - currentDay;
+  // Adjust the date by adding the day difference
+  const newDate = new Date(date);
+  newDate.setDate(date.getDate() + dayDifference);
+  newDate.setHours(0, 0, 0, 0);
+  return newDate;
+}
 
 /**
  * Get array of current week dates, from Monday to Sunday
@@ -19,7 +30,6 @@ export const getInitialDateRange = () => {
   const firstDateOfWeek = getDay(new Date(), 1);
   const lastDateOfWeek = getDay(new Date(), 7);
   const initialDateRange = [];
-
   for (
     let d = firstDateOfWeek;
     d <= lastDateOfWeek;

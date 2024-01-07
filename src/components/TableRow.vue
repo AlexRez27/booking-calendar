@@ -95,13 +95,13 @@ td {
   position: relative;
 }
 .rowname {
-  font-size: 14px;
+  font-size: $--main-font-size;
   color: #7db466;
   font-weight: bold;
   position: relative;
   height: 70px;
   box-sizing: border-box;
-  // font-family: $--main-font-family;
+  font-family: $--main-font-family;
 }
 .cell {
   position: relative;

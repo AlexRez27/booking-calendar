@@ -142,10 +142,10 @@ export default {
   justify-content: center;
   color: #000;
   text-align: center;
-  font-size: 14px;
+  font-size: $--main-font-size;
   font-weight: bold;
   cursor: pointer;
-  // font-family: $--main-font-family;
+  font-family: $--main-font-family;
 }
 .right-edge {
   border-top-right-radius: 0;
