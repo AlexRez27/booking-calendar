@@ -54,8 +54,6 @@ export default {
     currentDayIndex() {
       const currentDate = new Date();
       currentDate.setHours(0, 0, 0, 0);
-      // console.log(currentDate);
-      // console.log(this.getDateRange[0]);
       return this.getDateRange.findIndex(
         (el) => el.getTime() === currentDate.getTime()
       );

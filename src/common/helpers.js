@@ -13,7 +13,6 @@ function getDay(date, dayNumber) {
 
   // Calculate the difference between the desired day and the current day
   const currentDay = ((date.getDay() + 6) % 7) + 1;
-  console.log(((date.getDay() + 6) % 7) + 1);
   const dayDifference = dayNumber - currentDay;
   // Adjust the date by adding the day difference
   const newDate = new Date(date);
