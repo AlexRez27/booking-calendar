@@ -54,9 +54,15 @@ export default {
     columnWidth() {
       return this.clientWidth / 7 / 24;
     },
+    /**
+     * Check if left side of the reservation component should has border-radius
+     */
     isLeftEdge() {
       return new Date(this.guest.start) < this.getDateRange[0];
     },
+    /**
+     * Check if right side of the reservation component should has border-radius
+     */
     isRightEdge() {
       return new Date(this.guest.end) > this.getDateRange[6];
     },
@@ -71,7 +77,7 @@ export default {
       return endDate;
     },
     /**
-     * Get value where to start rendering component (css left property)
+     * Get value where to start rendering the component (css left property)
      */
     left() {
       let left =
@@ -81,7 +87,7 @@ export default {
       return left;
     },
     /**
-     * Get value where to end rendering component (css right property)
+     * Get value where to finish rendering the component (css right property)
      */
     right() {
       let right =
@@ -97,7 +103,7 @@ export default {
   },
   methods: {
     /**
-     * Count number of hours is reserved per week
+     * Count number of hours that are reserved per week
      * @param {Date} startDate
      * @param {Date} endDate
      * @return {Number}
