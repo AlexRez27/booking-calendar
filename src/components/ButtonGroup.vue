@@ -49,6 +49,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   max-width: 200px;
+  margin-left: 10px;
   display: grid;
   grid-template-rows: repeat(1, minmax(0, 1fr));
   grid-template-columns: repeat(3, minmax(0, 1fr));
